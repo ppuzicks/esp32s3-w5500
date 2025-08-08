@@ -1,0 +1,23 @@
+CompileFlags:
+  Add:
+    - -I.
+    - -I./main
+    - -I./components
+    - -I$IDF_PATH/components
+    - -DIDF_VER=\"$(IDF_VER)\"
+    - -DESP_PLATFORM
+    - -D__ESP32__
+    - -Wall
+    - -Wextra
+    - -Wno-unused-parameter
+    - -Wno-missing-field-initializers
+    - -Wno-unused-variable
+    - -Wno-sign-compare
+    - -Wno-implicit-fallthrough
+    - -std=gnu11
+    - -fno-common
+    - -fdiagnostics-color=always
+  Remove:
+    - -stdlib=libc++
+  CompilationDatabase:
+    Directory: build

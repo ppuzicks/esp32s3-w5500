@@ -1,0 +1,27 @@
+---
+BasedOnStyle: LLVM
+IndentWidth: 2
+TabWidth: 2
+UseTab: Never
+
+ColumnLimit: 80
+DerivePointerAlignment: false
+PointerAlignment: Left
+
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+
+SpacesInParentheses: false
+SpaceAfterCStyleCast: true
+SpaceBeforeParens: SBPO_ControlStatements
+SpaceBeforeRangeBasedForLoopColon: true
+
+BreakBeforeBraces: BS_Attach
+AlwaysBreakAfterReturnType: None
+
+SortIncludes: true
+IncludeBlocks: IBS_Regroup
+
+Cpp11BracedListStyle: false
+---
