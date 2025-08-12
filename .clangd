@@ -19,5 +19,4 @@ CompileFlags:
     - -fdiagnostics-color=always
   Remove:
     - -stdlib=libc++
-  CompilationDatabase:
-    Directory: build
+  CompilationDatabase: build

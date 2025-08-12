@@ -1,8 +1,11 @@
 # esp32s3-w5500
+
 esp-idf를 이용한 esp32s3-w5500 board 테스트
 
-# HW 
+# HW
+
 ## w5500 spi config
+
 - MOSI : GPIO11
 - MISO : GPIO13
 - SCLK : GPIO12
@@ -11,5 +14,7 @@ esp-idf를 이용한 esp32s3-w5500 board 테스트
 - nRESET : GPIO5
 
 # SW
+
 ## Dependancy
-- 
+
+- ethernet_init

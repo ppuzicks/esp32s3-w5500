@@ -1,0 +1,21 @@
+#
+# Copyright (c) 2025 김태희
+#
+# SPDX-License-Identifier: MIT
+#
+
+menu "Application for Fire Detector on ESP32"
+
+config MAX_NUM_OF_SENSOR_TYPES
+  int "Number of sensor types"
+  default 9
+  help
+    Number of sensor types to be used in the application.
+
+config PROJECT_VERSION
+    string "Version (manual override)"
+    default "0.0.0"
+    help
+        Project version string. If Git is available, Git tag will override this value.
+
+endmenu
