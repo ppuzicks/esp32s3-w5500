@@ -6,4 +6,7 @@
 
 #pragma once
 
+#include <stdbool.h>
+
+bool nvram_get_prov_done(void);
 void nvram_init(void);

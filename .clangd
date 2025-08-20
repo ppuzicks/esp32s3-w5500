@@ -19,4 +19,6 @@ CompileFlags:
     - -fdiagnostics-color=always
   Remove:
     - -stdlib=libc++
+    - -fno-tree-switch-conversion
+    - -mlongcalls
   CompilationDatabase: build

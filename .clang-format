@@ -14,14 +14,14 @@ AllowShortLoopsOnASingleLine: false
 
 SpacesInParentheses: false
 SpaceAfterCStyleCast: true
-SpaceBeforeParens: SBPO_ControlStatements
+SpaceBeforeParens: ControlStatements
 SpaceBeforeRangeBasedForLoopColon: true
 
-BreakBeforeBraces: BS_Attach
+BreakBeforeBraces: Attach
 AlwaysBreakAfterReturnType: None
 
 SortIncludes: true
-IncludeBlocks: IBS_Regroup
+IncludeBlocks: Regroup
 
 Cpp11BracedListStyle: false
 ---

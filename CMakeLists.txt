@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.16)
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 
 # 추가 컴포넌트 경로 등록 (프로젝트 내 components/ 폴더 사용)
-# set(EXTRA_COMPONENT_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/components)
+set(EXTRA_COMPONENT_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/components)
 
 # 기본값: menuconfig 설정
 set(PROJECT_VER ${CONFIG_PROJECT_VERSION})
