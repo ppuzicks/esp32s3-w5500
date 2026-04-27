@@ -6,19 +6,28 @@
 
 #pragma once
 
-#include "esp_netif.h"
-#include "esp_netif_ip_addr.h"
-#include "sdkconfig.h"
+// #include "esp_netif.h"
+#include <esp_netif_ip_addr.h>
+#include <esp_netif_types.h>
+#include <sdkconfig.h>
 
 #define HOST_NAME_LEN 64
 #define ID_LEN 64
 #define PW_LEN ID_LEN
 #define TOKEN_LEN 128
 
+#define MAC_ADDR_LEN 6
 #define DEVICE_ID_LEN 6
 #define DEVICE_ID_STR_LEN (DEVICE_ID_LEN * 2 + 1)
 #define SERIAL_LEN 16
 #define SERIAL_STR_LEN (SERIAL_LEN * 2 + 1)
+
+#define UPDATE_SERVER_DOMAIN "cym-rnd.duckdns.org"
+#define PROVISIONER_PATH "/provisioning"
+#define OTA_PATH "/ota"
+#define OTA_VERSION_PATH "/ota/version"
+
+#define SNTP_DEFAULT_SERVER "pool.ntp.org"
 
 enum sensor_type_id {
   TYPE_T = 0,  // 온도 (대기온도 등 통칭)
@@ -41,22 +50,22 @@ enum proto_t {
 struct nvram_net {
   enum proto_t proto;
 
-  esp_ip4_addr_t ipaddr;
-  esp_ip4_addr_t netmask;
-  esp_ip4_addr_t gateway;
+  esp_netif_ip_info_t ip_info;
+  esp_ip4_addr_t primary_dns;
+  esp_ip4_addr_t secondary_dns;
 };
 
 struct nvram_mqtt {
   bool enable;
-  uint8_t host[HOST_NAME_LEN];
+  char host[HOST_NAME_LEN];
   uint16_t port;
   char id[ID_LEN];
   char pw[PW_LEN];
 };
 
 struct nvram_token {
-  uint8_t access[TOKEN_LEN];
-  uint8_t refresh[TOKEN_LEN];
+  char access[TOKEN_LEN];
+  char refresh[TOKEN_LEN];
 };
 
 struct nvram_fold {
@@ -81,11 +90,13 @@ struct nvram_version {
 };
 
 struct nvram_ids {
+  uint8_t eth_mac[MAC_ADDR_LEN];
   uint8_t device_id[DEVICE_ID_LEN];
   char device_id_str[DEVICE_ID_STR_LEN];
   uint8_t serial[SERIAL_LEN];
   char serial_str[SERIAL_STR_LEN];
 };
 
-static const char *sensor_type[CONFIG_MAX_NUM_OF_SENSOR_TYPES] = {
-    "AT", "RH", "CD", "VOC", "NOX", "PM_1_0", "PM_2_5", "PM_10", "CM"};
+static const char* sensor_type[CONFIG_MAX_NUM_OF_SENSOR_TYPES] = {
+  "AT", "RH", "CD", "VOC", "NOX", "PM_1_0", "PM_2_5", "PM_10", "CM"
+};

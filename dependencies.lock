@@ -47,8 +47,18 @@ dependencies:
       registry_url: https://components.espressif.com/
       type: service
     version: 0.6.1
+  espressif/jsmn:
+    component_hash: d80350c41bbaa827c98a25b6072df00884e72f54885996fab4a4f0aebce6b6c3
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.3'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.1.0
   espressif/lan865x:
-    component_hash: 4997b2f49d1fca8330191718958f39b2df41812230e36f52a22d9cfb146a2535
+    component_hash: 2a27887016922bea266f6052bd811b720b30e516188863051971cbc809710b4e
     dependencies:
     - name: espressif/lan86xx_common
       registry_url: https://components.espressif.com
@@ -60,7 +70,7 @@ dependencies:
     source:
       registry_url: https://components.espressif.com
       type: service
-    version: 0.1.1
+    version: 0.1.2
   espressif/lan86xx_common:
     component_hash: 6dcb1be9f43ae940979bd628fa5bee278949b66c545e1fe2321e486102e81026
     dependencies:
@@ -77,7 +87,8 @@ dependencies:
     version: 5.5.0
 direct_dependencies:
 - espressif/ethernet_init
+- espressif/jsmn
 - idf
-manifest_hash: 74ecc674b75a947058c2e7cd6aa2819b289668268a05978e0f1743774b7517b6
+manifest_hash: c5eca786bc07b53818c317f8d52584a702bad6744e0e3a0db06fd7d31aee4433
 target: esp32s3
 version: 2.0.0
